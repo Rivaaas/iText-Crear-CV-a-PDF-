@@ -54,6 +54,8 @@
 
             <input type="submit" value="GENERAR"  class="waves-effect waves-light btn">
         </form>
+            
+            <a href="test.jsp">TEST</a>
 
 
         <div>
