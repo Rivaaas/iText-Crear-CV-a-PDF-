@@ -99,14 +99,11 @@ public class pdf extends HttpServlet {
         String universidad = request.getParameter("txtUniversidad");
         String experiencia = request.getParameter("txtExperiencia");
 
-        //CODIGO PARA RESCATAR URL DE IMAGEN
-        Part fotocv = request.getPart("foto");
+       
 
    
 
-        InputStream fileContent = fotocv.getInputStream();
         
-        out.println(fileContent);
         
         
         
@@ -189,7 +186,9 @@ public class pdf extends HttpServlet {
             doc.close();
 
             //respondemos hacia la primera vista, MOSTRANDO COMO MENSAJE LA RUTA DONDE EL ARCHIVO SE GUARDO
-            request.getRequestDispatcher("test.jsp?m=" + path + nombreArchivo + ".pdf").forward(request, response);
+         request.getRequestDispatcher("index2.jsp").forward(request, response);
+            
+            
         } catch (Exception ex) {
             Logger.getLogger(pdfServlet.class.getName()).log(Level.SEVERE, null, ex);
         }

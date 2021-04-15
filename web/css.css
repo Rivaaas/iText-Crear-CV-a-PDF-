@@ -1,0 +1,35 @@
+ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizzing: border-box;
+    
+    
+    
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content:center;
+    align-items: center;
+    background: linear-gradient(135deg, #71b7e6, 9b59b6);
+ 
+    
+}
+
+.form22{
+    width: 800px;
+    height: 850px;
+    background: #000000;
+    padding: 100px;
+    margin: auto;
+    margin-top: -50px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+   
+    
+    
+}
+
