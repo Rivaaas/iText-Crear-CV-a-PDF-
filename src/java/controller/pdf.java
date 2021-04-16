@@ -28,7 +28,7 @@ import javax.swing.text.Position;
 
 /**
  *
- * @author rivaa
+ * @author carolina
  */
 @WebServlet(name = "pdf", urlPatterns = {"/pd2f.do"})
 public class pdf extends HttpServlet {
@@ -45,18 +45,7 @@ public class pdf extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet pdf</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet pdf at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -99,19 +88,11 @@ public class pdf extends HttpServlet {
         String universidad = request.getParameter("txtUniversidad");
         String experiencia = request.getParameter("txtExperiencia");
 
-       
-
-   
-
-        
-        
-        
-        
-        
+    
         
         //RUTA DONDE IRA
         String path = "C:\\Users\\rivaa\\Documents\\pdf software\\";
-        //NOMBRE DEL ARCHIVO, SE LO DAMOS AFUERA O PUEDES DARSELO AQUI DENTRO TAMBIEN
+        //NOMBRE DEL ARCHIVO
         String nombreArchivo = request.getParameter("nombreAr");
 
         try {
@@ -138,9 +119,8 @@ public class pdf extends HttpServlet {
             //LE DAMOS UN NUEVO PARRAFO, EL CUAL LE DIMOS UN TITULO QUE ES EL FORMATO ANTES VISTO
             Paragraph titulo = new Paragraph("Nombre:  " + nombre, fTitulo);
 
-//            CREAMOS OTRO PARRAFO NORMAL DE SOLO TEXTO SIN UNA FUENTE ESPCIFICA
-//            Paragraph texto = new Paragraph("Aqui van mas parametros que quieras mandar");
-//            //CREAMOS UN PARRAFO PARA LA EDAD POR EJEMPLO
+          
+
             Paragraph vacio1 = new Paragraph();
             vacio1.add("\n\n");
             Paragraph titulo2 = new Paragraph("Curriculum Vitae", CURRICULUMTITULO);
@@ -186,13 +166,14 @@ public class pdf extends HttpServlet {
             doc.close();
 
             //respondemos hacia la primera vista, MOSTRANDO COMO MENSAJE LA RUTA DONDE EL ARCHIVO SE GUARDO
-         request.getRequestDispatcher("index2.jsp").forward(request, response);
-            
+         request.getRequestDispatcher("test.jsp").forward(request, response);
+         
+           
             
         } catch (Exception ex) {
-            Logger.getLogger(pdfServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(pdf.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+       
     }
 
     /**

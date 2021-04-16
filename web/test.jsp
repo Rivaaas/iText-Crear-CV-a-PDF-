@@ -1,7 +1,7 @@
 <%-- 
     Document   : test
     Created on : 12-04-2021, 15:56:53
-    Author     : rivaa
+    Author     : carolina
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -94,7 +94,7 @@
                     </textarea>
                     
                      <h6>Nombre de colegio en media</h6>
-                    <textarea name="txtMedia" class="white-text text-darken">
+                    <textarea name="txtMedia"  class="white-text text-darken">
                    
                     </textarea>
      
